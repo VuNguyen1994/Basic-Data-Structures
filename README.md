@@ -7,8 +7,8 @@ Binary Tree using struct (applicable for C)
 Binary Tree using class 
 
 ### Note:
-Linked lists are auto-sorted whenever we add another node. It traverses the list, looking for appropriate location and add accordingly. 
-Remove duplicates function is used to traverse through the list and delete all the duplicates (Imaging we are cleaning up database)
+##### Linked lists are auto-sorted whenever we add another node. It traverses the list, looking for appropriate location and add accordingly. 
+##### Remove duplicates function is used to traverse through the list and delete all the duplicates (Imaging we are cleaning up database)
 
 ### Compile:
 g++ <filename> -o <output_object_name>
