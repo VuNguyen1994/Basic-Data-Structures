@@ -3,8 +3,8 @@
 ### Content:
 Linked List using struct (applicable for C)
 Linked List using class
-Binary Tree using struct (applicable for C)
-Binary Tree using class 
+Binary Search Tree using struct (applicable for C)
+Binary Search Tree using class 
 
 ### Note:
 ##### Linked lists are auto-sorted whenever we add another node. It traverses the list, looking for appropriate location and add accordingly. 
