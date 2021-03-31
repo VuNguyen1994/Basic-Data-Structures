@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <iostream>
 #include <map>
+#include <bits/stdc++.h>
+using namespace std;
 
 struct Node
 {
@@ -113,6 +115,28 @@ void remove_dups(linked_list_struct * a){
     }
 }
 
+void remove_dups_optimized(linked_list_struct * a){
+    // Use hash to store the unique values and delete if it sees dups. 
+    // find() takes only O(1). So total time is O(n)
+    struct Node * current = a->head;
+    struct Node * prev = current;
+    unordered_set<int> seen;
+    while (current != NULL){
+        if (seen.find(current->data) == seen.end()){
+            seen.insert(current->data);
+            prev = current;
+            current = current->next;
+        }
+        else
+        {
+            // Delete node duplicated current
+            prev->next = current->next;
+            free(current);
+            current = prev->next;
+        }
+    }
+}
+
 int main(int argc, char *argv[]){
     struct linked_list_struct * a = (struct linked_list_struct *) malloc(sizeof(linked_list_struct));
     insert(a, 2);
@@ -125,8 +149,11 @@ int main(int argc, char *argv[]){
     insert(a, 5);
     printf("Linked List: \n");
     print_linked_list(a);
-    printf("After rm dups\n");
-    remove_dups(a);
+    // printf("After rm dups\n");
+    // remove_dups(a);
+    // print_linked_list(a);
+    printf("After rm dups optimized\n");
+    remove_dups_optimized(a);
     print_linked_list(a);
     int del_val = 1;
     printf("After delete node %d\n", del_val);
